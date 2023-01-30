@@ -1,6 +1,12 @@
 const express = require('express');
 const dotEnv = require('dotenv').config();
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://localhost:27017/harshniveus").then(()=>{
+    console.log('connected to db')
+}).catch((E)=>{
+    console.log(E);
+});
 const app = express();
 console.log(process.env.PORT)
 const port =process.env.PORT || 8000;
